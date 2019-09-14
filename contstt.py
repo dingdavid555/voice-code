@@ -5,6 +5,7 @@ import sys
 import os
 import numpy as np
 import pandas as pd
+import remove_stop_words
 
 from google.cloud import speech
 from google.cloud.speech import enums
@@ -131,6 +132,8 @@ def listen_print_loop(responses):
 
         else:
             print(transcript + overwrite_chars)
+            words.append(filter(transcript.split(" ")))
+            print(words)
 
             # Exit recognition if any of the transcribed phrases could be
             # one of our keywords.
