@@ -116,7 +116,7 @@ def listen_print_loop(responses):
             continue
 
         # Display the transcription of the top alternative.
-        transcript = result.alternatives[0].transcript
+        transcript = result.alternatives[0].transcript.lower()
 
         # Display interim results, but with a carriage return at the end of the
         # line, so subsequent lines will overwrite them.
