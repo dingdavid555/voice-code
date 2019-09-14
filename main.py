@@ -8,12 +8,10 @@ from google.cloud.speech import types
 from google.cloud import texttospeech
 
 
-
 # Instantiates a client
 # client = speech.SpeechClient()
 credential_path = "cred.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
-
 
 
 # Instantiates a client

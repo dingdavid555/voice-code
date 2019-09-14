@@ -133,7 +133,9 @@ def listen_print_loop(responses):
 
         else:
             print(transcript + overwrite_chars)
-            words[counter] = (remove_stop_words.filter(transcript.split(" ")))
+            curr_line = remove_stop_words.filter(transcript.split(" "))
+            filtered = [x for x in curr_line if x.strip()]
+            words[counter] = filtered
             print(words)
             if counter == 4:
                 counter = 0
