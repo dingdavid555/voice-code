@@ -132,7 +132,7 @@ def listen_print_loop(responses):
 
         else:
             print(transcript + overwrite_chars)
-            words.append(filter(transcript.split(" ")))
+            words.append(remove_stop_words.filter(transcript.split(" ")))
             print(words)
 
             # Exit recognition if any of the transcribed phrases could be
