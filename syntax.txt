@@ -1,0 +1,31 @@
+***************************************************************************************
+
+PROGRAMMING SYNTAX
+
+DEFAULT SYNTAX FOR PROGRAMMING KEYWORDS USING 'name to be determined'
+
+***************************************************************************************
+
+Print - 'Print' followed by 'string' and the name of a string variable, or say 'the following' to print the rest of the statement.
+
+Defining Variables - 'Create' followed by [int, float, double, char, string, etc] (choose one), 'your variable name', 'your variable value'
+
+For Loops - 	
+
+If Statements -
+
+Else-If Statements
+
+Else Statements -
+
+Defining Functions - 
+
+Editting Previous Lines -
+
+Creating Data Structures (Arrays, Sets, Maps, etc) - 
+
+Updating Variables - 
+
+
+
+
