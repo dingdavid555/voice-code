@@ -136,7 +136,9 @@ def listen_print_loop(responses):
             words[counter] = (remove_stop_words.filter(transcript.split(" ")))
             print(words)
             if counter == 4:
-                counter = -1
+                counter = 0
+            else:
+                counter += 1
 
             # Exit recognition if any of the transcribed phrases could be
             # one of our keywords.
@@ -145,7 +147,6 @@ def listen_print_loop(responses):
                 break
 
             num_chars_printed = 0
-            counter += 1
 
 
 
