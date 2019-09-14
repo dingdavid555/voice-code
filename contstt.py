@@ -15,7 +15,7 @@ from six.moves import queue
 
 credential_path = "cred.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
-words = []
+words = ["" for i in range(5)]
 
 # Audio recording parameters
 RATE = 16000
@@ -103,6 +103,7 @@ def listen_print_loop(responses):
     final one, print a newline to preserve the finalized transcription.
     """
     num_chars_printed = 0
+    counter = 0
     for response in responses:
         if not response.results:
             continue
@@ -132,8 +133,10 @@ def listen_print_loop(responses):
 
         else:
             print(transcript + overwrite_chars)
-            words.append(remove_stop_words.filter(transcript.split(" ")))
+            words[counter] = (remove_stop_words.filter(transcript.split(" ")))
             print(words)
+            if counter == 4:
+                counter = -1
 
             # Exit recognition if any of the transcribed phrases could be
             # one of our keywords.
@@ -142,6 +145,8 @@ def listen_print_loop(responses):
                 break
 
             num_chars_printed = 0
+            counter += 1
+
 
 
 def main():
