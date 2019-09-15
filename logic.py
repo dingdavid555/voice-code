@@ -1,13 +1,23 @@
+class OpenFile:
+    def __init__(self):
+        self.open_variables = {}
+        self.tabs = 0
+
+
 def string_handler(curr_input, file):
     return 0
 
 
-def print_func(curr_input, file):
+def print_func(curr_input, file, curr_file):
     file.write("print(\"%s\")\n" % ' '.join(curr_input))
-    print("print(\"%s\")" % ' '.join(curr_input))
+
+    if ' '.join(curr_input) in curr_file.open_variables:
+        print("print(%s)", ' '.join(curr_input))
+    else:
+        print("print(\"%s\")" % ' '.join(curr_input))
 
 
-def create_func(curr_input, file):
+def create_func(curr_input, file, curr_file):
     varType = curr_input[0]
     varName = curr_input[1]
     varVal = curr_input[2]
@@ -17,35 +27,37 @@ def create_func(curr_input, file):
     elif varType == "float":
         varVal = float(varVal)
     else:
-        varVal = str(curr_input[2:])
+        varVal = str(' '.join(curr_input[2:]))
+
+    curr_file.open_variables[varName] = varVal
 
     file.write("%s = %s\n" % (varName, varVal))
     print("%s = %s\n" % (varName, varVal))
 
 
-def loop_func(curr_input, file):
+def loop_func(curr_input, file, curr_file):
     return 0
 
 
-def condition_func(curr_input, file):
+def condition_func(curr_input, file, curr_file):
     return 0
 
 
-def function_func(curr_input, file):
+def function_func(curr_input, file, curr_file):
     return 0
 
 
-def start_word(arr, file):
+def start_word(arr, file, curr_file):
     for i in range(len(arr)):
         print("CURRENT WORD: %s " % arr[i])
         if arr[i] == "print":
-            print_func(arr[i+1:], file)
+            print_func(arr[i+1:], file, curr_file)
         elif arr[i] == "create":
-            create_func(arr[i+1:], file)
+            create_func(arr[i+1:], file, curr_file)
         elif arr[i] == "loop":
-            loop_func(arr[i+1:], file)
+            loop_func(arr[i+1:], file, curr_file)
         elif arr[i] == "condition":
-            condition_func(arr[i+1:], file)
+            condition_func(arr[i+1:], file, curr_file)
         elif arr[i] == "function":
-            function_func(arr[i+1:], file)
+            function_func(arr[i+1:], file, curr_file)
 

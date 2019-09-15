@@ -136,7 +136,7 @@ def listen_print_loop(responses):
             filtered = [x for x in transcript.split(" ") if x.strip()] # sub array
             words[counter] = filtered # parent array
             print(filtered)
-            start_word(filtered, file)
+            start_word(filtered, file, curr_file)
             print(words)
             if counter == 4:
                 counter = 0
@@ -151,6 +151,8 @@ def listen_print_loop(responses):
 
             num_chars_printed = 0
 
+
+curr_file = OpenFile
 
 with open("test.txt", 'a') as file:
     # See http://g.co/cloud/speech/docs/languages
