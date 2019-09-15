@@ -1,31 +1,32 @@
-***************************************************************************************
+*************************************************************************************
 
 PROGRAMMING SYNTAX
 
 DEFAULT SYNTAX FOR PROGRAMMING KEYWORDS USING 'name to be determined'
 
-***************************************************************************************
+*************************************************************************************
 
 Print - 'Print' followed by 'string' and the name of a string variable, or say 'the following' to print the rest of the statement.
 
+Commenting - "comment" followed by [string/comment] 
+		   - "comment block" followed by [string comment]
+
 Defining Variables - 'Create' followed by [int, float, double, char, string, etc] (choose one), 'your variable name', 'your variable value'
 
-For Loops - 	
+For Loops - 'Loop' followed by 'for [variable] in' [range], [iterable object]
 
-If Statements -
+If Statements - 'Condition' followed by 'if' [variable 1] [operator] [variable 2], [iterable object]
 
-Else-If Statements
+Else-If Statements - (only runs if said after If statement command) 'Else if' [variable 1] [operator] [variable 2], [iterable object]
 
-Else Statements -
+Else Statements - (only runs after if or elif) "Else", [iterable object]
 
-Defining Functions - 
+Defining Functions - 'Function' followed by [name], followed by [iterable object]
 
-Editting Previous Lines -
+Editting Previous Lines - 'Edit' followed by [line number], [new command]
 
-Creating Data Structures (Arrays, Sets, Maps, etc) - 
-
-Updating Variables - 
-
-
+Creating Data Structures (Arrays, Sets, Maps, etc) - 'initialize' followed by [array name]: [datatype]+[variable]+
+  
+Updating Variables - 'Update' followed by [variable name] "equals" [value]
 
 
