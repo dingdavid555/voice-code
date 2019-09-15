@@ -23,7 +23,7 @@ def comment_func(curr_input, file, curr_file):
     for i in range (curr_file.tabs):
         file.write('\t')
     output = ' '.join(curr_input)
-    file.write('#' + output + '\n')
+    file.write('# ' + output + '\n')
     print('#' + output + '\n')
 
 def create_func(curr_input, file, curr_file):
@@ -66,6 +66,23 @@ def loop_func(curr_input, file, curr_file):
 
 
 def condition_func(curr_input, file, curr_file):
+    var1 = curr_input[0]
+    oper = curr_input[1]
+    var2 = curr_input[2]
+
+    if (oper == "equals") or (oper == "equal"):
+        oper = "=="
+
+    elif ((oper == "less") and (curr_input[2] == "than")):
+        var2 = curr_input[3]
+        oper = "<"
+
+    elif ((oper == "greater") and (curr_input[2] == "than")):
+        var2 = curr_input[3]
+        oper = ">"
+
+    print("if " + var1 + oper + var2 + ":" + "\n")
+
     return 0
 
 
@@ -86,7 +103,7 @@ def start_word(arr, file, curr_file):
         elif arr[i] == "finish":
             if curr_file.tabs == 0:
                 print('Nothing to finish here...')
-            else: 
+            else:
                 curr_file.tabs -= 1;
         elif arr[i] == "condition":
             condition_func(arr[i+1:], file, curr_file)
@@ -94,4 +111,3 @@ def start_word(arr, file, curr_file):
             function_func(arr[i+1:], file, curr_file)
         elif (arr[i] == "comment") or (arr[i] == "comments"):
             comment_func(arr[i+1:], file, curr_file)
-
