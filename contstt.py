@@ -5,8 +5,7 @@ import sys
 import os
 import numpy as np
 import pandas as pd
-import remove_stop_words
-import logic
+from logic import *
 
 from google.cloud import speech
 from google.cloud.speech import enums
@@ -133,9 +132,11 @@ def listen_print_loop(responses):
 
         else:
             print(transcript + overwrite_chars)
-            curr_line = remove_stop_words.filter(transcript.split(" "))
-            filtered = [x for x in curr_line if x.strip()] # sub array
+            # curr_line = remove_stop_words.filter(transcript.split(" "))
+            filtered = [x for x in transcript.split(" ") if x.strip()] # sub array
             words[counter] = filtered # parent array
+            print(filtered)
+            start_word(filtered, file)
             print(words)
             if counter == 4:
                 counter = 0
@@ -151,7 +152,7 @@ def listen_print_loop(responses):
             num_chars_printed = 0
 
 
-def main(file):
+with open("test.txt", 'a') as file:
     # See http://g.co/cloud/speech/docs/languages
     # for a list of supported languages.
     language_code = 'en-US'  # a BCP-47 language tag
@@ -176,6 +177,3 @@ def main(file):
         listen_print_loop(responses)
 
 
-with open((sys.argv)[1], 'w') as file:
-    if __name__ == '__main__':
-        main()
