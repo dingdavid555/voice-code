@@ -152,7 +152,7 @@ def listen_print_loop(responses):
             num_chars_printed = 0
 
 
-curr_file = OpenFile
+curr_file = OpenFile()
 
 with open("test.txt", 'a') as file:
     # See http://g.co/cloud/speech/docs/languages
