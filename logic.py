@@ -4,23 +4,33 @@ class OpenFile:
         self.tabs = 0
 
 
-def string_handler(curr_input, file):
+def string_handler(curr_input, file, curr):
     return 0
 
 
 def print_func(curr_input, file, curr_file):
-    file.write("print(\"%s\")\n" % ' '.join(curr_input))
+    output = ""
+    for i in range(curr_file.tabs):
+        output += "\t"
+    output += ""
 
     if ' '.join(curr_input) in curr_file.open_variables:
-        print("print(%s)", ' '.join(curr_input))
+        output += "print(%s)", ' '.join(curr_input)
     else:
-        print("print(\"%s\")" % ' '.join(curr_input))
+        output += "print(\"%s\")" % ' '.join(curr_input)
+
+    file.write(output)
 
 
-def comment_func(curr_input, file):
-    output = ' '.join(curr_input)
-    file.write('# ' + output + '\n')
-    print('#' + output + '\n')
+def comment_func(curr_input, file, curr_file):
+    output = ""
+    for i in range(curr_file.tabs):
+        output += '\t'
+
+    output += "# " + ' '.join(curr_input)
+    file.write(output)
+    print(output)
+
 
 def create_func(curr_input, file, curr_file):
     varType = curr_input[0]
@@ -36,12 +46,22 @@ def create_func(curr_input, file, curr_file):
 
     curr_file.open_variables[varName] = varVal
 
-    file.write("%s = %s\n" % (varName, varVal))
-    print("%s = %s\n" % (varName, varVal))
+    output = ""
+    for i in range(curr_file.tabs):
+        output += '\t'
+    output += "%s = %s\n" % (varName, varVal)
+
+    file.write(output)
+    print(output)
 
 
 def loop_func(curr_input, file, curr_file):
-    file.write('for ' + curr_input[0] + ' in range ' + curr_input[1] + ':' + '\n')
+    output = ""
+    for i in range(curr_input):
+        output += "\t"
+    output += 'for ' + curr_input[0] + ' in range ' + curr_input[1] + ':' + '\n'
+
+    file.write(output)
 
 
 def condition_func(curr_input, file, curr_file):
@@ -72,8 +92,6 @@ def function_func(curr_input, file, curr_file):
 def start_word(arr, file, curr_file):
     for i in range(len(arr)):
         print("CURRENT WORD: %s " % arr[i])
-        for i in range (curr_file.tabs):
-            file.write('\t')
         if (arr[i] == "print") or (arr[i] == "prince"):
             print_func(arr[i+1:], file, curr_file)
         elif arr[i] == "create":
