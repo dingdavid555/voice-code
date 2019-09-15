@@ -41,7 +41,7 @@ def create_func(curr_input, file, curr_file):
 
 
 def loop_func(curr_input, file, curr_file):
-    file.write('for' + curr_input[0] + curr_input[1] + '\n')
+    file.write('for ' + curr_input[0] + ' in range ' + curr_input[1] + ':' + '\n')
 
 
 def condition_func(curr_input, file, curr_file):

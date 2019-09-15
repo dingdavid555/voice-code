@@ -3,4 +3,9 @@ Hi there!Hi there!#
 #
 fori-5stop
 	fori-5stop
-																								
+																								forvariablefive
+	forvariablefive
+																										for my in range variable
+	for my in range variable
+						for var in range 5
+	for var in range 5
