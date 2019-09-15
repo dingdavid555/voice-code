@@ -7,6 +7,11 @@ def print_func(curr_input, file):
     print("print(\"%s\")" % ' '.join(curr_input))
 
 
+def comment_func(curr_input, file):
+    output = ' '.join(curr_input)
+    file.write('#' + output + '\n')
+    print('#' + output + '\n')
+
 def create_func(curr_input, file):
     varType = curr_input[0]
     varName = curr_input[1]
@@ -48,4 +53,6 @@ def start_word(arr, file):
             condition_func(arr[i+1:], file)
         elif arr[i] == "function":
             function_func(arr[i+1:], file)
+        elif arr[i] == "comment":
+            comment_func(arr[i+1:], file)
 
