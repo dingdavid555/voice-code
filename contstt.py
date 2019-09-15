@@ -6,6 +6,7 @@ import os
 import numpy as np
 import pandas as pd
 import remove_stop_words
+import logic
 
 from google.cloud import speech
 from google.cloud.speech import enums
@@ -134,8 +135,8 @@ def listen_print_loop(responses):
         else:
             print(transcript + overwrite_chars)
             curr_line = remove_stop_words.filter(transcript.split(" "))
-            filtered = [x for x in curr_line if x.strip()]
-            words[counter] = filtered
+            filtered = [x for x in curr_line if x.strip()] # sub array
+            words[counter] = filtered # parent array
             print(words)
             if counter == 4:
                 counter = 0
@@ -149,7 +150,6 @@ def listen_print_loop(responses):
                 break
 
             num_chars_printed = 0
-
 
 
 def main():
