@@ -1,11 +1,4 @@
-Hi there!Hi there!#
-#this is a comment
-#
-fori-5stop
-	fori-5stop
-																								forvariablefive
-	forvariablefive
-																										for my in range variable
-	for my in range variable
-						for var in range 5
-	for var in range 5
+for variable in range five:
+for variable in range six:
+		#this is a comment
+		#

@@ -9,6 +9,8 @@ def string_handler(curr_input, file):
 
 
 def print_func(curr_input, file, curr_file):
+    for i in range (curr_file.tabs):
+        file.write('\t')
     file.write("print(\"%s\")\n" % ' '.join(curr_input))
 
     if ' '.join(curr_input) in curr_file.open_variables:
@@ -17,12 +19,16 @@ def print_func(curr_input, file, curr_file):
         print("print(\"%s\")" % ' '.join(curr_input))
 
 
-def comment_func(curr_input, file):
+def comment_func(curr_input, file, curr_file):
+    for i in range (curr_file.tabs):
+        file.write('\t')
     output = ' '.join(curr_input)
     file.write('#' + output + '\n')
     print('#' + output + '\n')
 
 def create_func(curr_input, file, curr_file):
+    for i in range (curr_file.tabs):
+        file.write('\t')
     varType = curr_input[0]
     varName = curr_input[1]
     varVal = curr_input[2]
@@ -41,7 +47,22 @@ def create_func(curr_input, file, curr_file):
 
 
 def loop_func(curr_input, file, curr_file):
-    file.write('for ' + curr_input[0] + ' in range ' + curr_input[1] + ':' + '\n')
+    for i in range ((curr_file.tabs) - 1 ):
+        file.write('\t')
+    num = curr_input[1]
+    if (num == 'one'):
+        curr_input[1] = 1
+    elif (num == 'two'):
+        curr_input[1] = 2
+    elif (num == 'three'):
+        curr_input[1] = 3
+    elif (num == 'four'):
+        curr_input[1] = 4
+    elif (num == 'five'):
+        curr_input[1] = 5
+    elif (num == 'six'):
+        curr_input[1] = 6
+    file.write('for ' + curr_input[0] + ' in range ' + num + ':' + '\n')
 
 
 def condition_func(curr_input, file, curr_file):
@@ -55,8 +76,6 @@ def function_func(curr_input, file, curr_file):
 def start_word(arr, file, curr_file):
     for i in range(len(arr)):
         print("CURRENT WORD: %s " % arr[i])
-        for i in range (curr_file.tabs):
-            file.write('\t')   
         if (arr[i] == "print") or (arr[i] == "prince"):
             print_func(arr[i+1:], file, curr_file)
         elif arr[i] == "create":
