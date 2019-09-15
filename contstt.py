@@ -22,7 +22,6 @@ words = ["" for i in range(5)]
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms
 
-
 class MicrophoneStream(object):
     """Opens a recording stream as a generator yielding the audio chunks."""
     def __init__(self, rate, chunk):
@@ -152,7 +151,7 @@ def listen_print_loop(responses):
             num_chars_printed = 0
 
 
-def main():
+def main(file):
     # See http://g.co/cloud/speech/docs/languages
     # for a list of supported languages.
     language_code = 'en-US'  # a BCP-47 language tag
@@ -177,5 +176,6 @@ def main():
         listen_print_loop(responses)
 
 
-if __name__ == '__main__':
-    main()
+with open((sys.argv)[1], 'w') as file:
+    if __name__ == '__main__':
+        main()
