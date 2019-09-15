@@ -1,20 +1,33 @@
+def print_func(curr_input):
+    return 0
 
 
-def start_word(arr)
-    for element in arr:
-        if element == "print":
-            print_func()
-        elif element == "create":
-            create_func()
-        elif element == "loop":
-            loop_func()
-        elif element == "condition":
-            condition_func()
-        elif element == "function":
-            function_func()
-        elif element == "edit":
-            edit_func()
-        elif element == "initialize":
-            initialize_func()
-        elif element == "equals":
-            equals_func()
+def create_func(curr_input):
+    return 0
+
+
+def loop_func(curr_input):
+    return 0
+
+
+def condition_func(curr_input):
+    return 0
+
+
+def function_func(curr_input):
+    return 0
+
+
+def start_word(arr):
+    for i in range(len(arr)):
+        if arr[i] == "print":
+            print_func(arr[i:])
+        elif arr[i] == "create":
+            create_func(arr[i:])
+        elif arr[i] == "loop":
+            loop_func(arr[i:])
+        elif arr[i] == "condition":
+            condition_func(arr[i:])
+        elif arr[i] == "function":
+            function_func(arr[i:])
+
