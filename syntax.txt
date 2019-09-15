@@ -8,7 +8,7 @@ DEFAULT SYNTAX FOR PROGRAMMING KEYWORDS USING 'name to be determined'
 
 Print - 'Print' followed by 'string' and the name of a string variable, or say 'the following' to print the rest of the statement.
 
-Commenting - "comment" followed by [string/comment] 
+Commenting - "comment" followed by [string/comment]
 		   - "comment block" followed by [string comment]
 
 Defining Variables - 'Create' followed by [int, float, double, char, string, etc] (choose one), 'your variable name', 'your variable value'
@@ -23,10 +23,8 @@ Else Statements - (only runs after if or elif) "Else", [iterable object]
 
 Defining Functions - 'Function' followed by [name], followed by [iterable object]
 
-Editting Previous Lines - 'Edit' followed by [line number], [new command]
+Editing Previous Lines - 'Edit' followed by [line number], [new command]
 
 Creating Data Structures (Arrays, Sets, Maps, etc) - 'initialize' followed by [array name]: [datatype]+[variable]+
-  
+
 Updating Variables - 'Update' followed by [variable name] "equals" [value]
-
-
