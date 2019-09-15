@@ -55,7 +55,7 @@ def function_func(curr_input, file, curr_file):
 def start_word(arr, file, curr_file):
     for i in range(len(arr)):
         print("CURRENT WORD: %s " % arr[i])
-        if arr[i] == "print":
+        if (arr[i] == "print") or (arr[i] == "prince"):
             print_func(arr[i+1:], file, curr_file)
         elif arr[i] == "create":
             create_func(arr[i+1:], file, curr_file)
@@ -65,6 +65,5 @@ def start_word(arr, file, curr_file):
             condition_func(arr[i+1:], file, curr_file)
         elif arr[i] == "function":
             function_func(arr[i+1:], file, curr_file)
-        elif arr[i] == "comment":
+        elif (arr[i] == "comment") or (arr[i] == "comments"):
             comment_func(arr[i+1:], file, curr_file)
-
