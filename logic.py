@@ -31,8 +31,9 @@ def comment_func(curr_input, file, curr_file):
     file.write(output)
     print(output)
 
-
 def create_func(curr_input, file, curr_file):
+    for i in range (curr_file.tabs):
+        file.write('\t')
     varType = curr_input[0]
     varName = curr_input[1]
     varVal = curr_input[2]
@@ -56,13 +57,29 @@ def create_func(curr_input, file, curr_file):
 
 
 def loop_func(curr_input, file, curr_file):
+
     output = ""
     for i in range(curr_input):
         output += "\t"
+
+
+    num = curr_input[1]
+    if (num == 'one'):
+        curr_input[1] = 1
+    elif (num == 'two'):
+        curr_input[1] = 2
+    elif (num == 'three'):
+        curr_input[1] = 3
+    elif (num == 'four'):
+        curr_input[1] = 4
+    elif (num == 'five'):
+        curr_input[1] = 5
+    elif (num == 'six'):
+        curr_input[1] = 6
+
     output += 'for ' + curr_input[0] + ' in range ' + curr_input[1] + ':' + '\n'
 
     file.write(output)
-
 
 def condition_func(curr_input, file, curr_file):
     var1 = curr_input[0]
