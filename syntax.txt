@@ -28,3 +28,5 @@ Editing Previous Lines - 'Edit' followed by [line number], [new command]
 Creating Data Structures (Arrays, Sets, Maps, etc) - 'initialize' followed by [array name]: [datatype]+[variable]+
 
 Updating Variables - 'Update' followed by [variable name] "equals" [value]
+
+hello
