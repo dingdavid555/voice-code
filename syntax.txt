@@ -11,7 +11,7 @@ Print - 'Print' followed by 'string' and the name of a string variable, or say '
 Commenting - "comment" followed by [string/comment]
 		   - "comment block" followed by [string comment]
 
-Defining Variables - 'Create' followed by [int, float, double, char, string, etc] (choose one), 'your variable name', 'your variable value'
+Defining Variables - 'Let' followed by [int, float, double, char, string, etc] (choose one), 'your variable name', 'your variable value'
 
 For Loops - 'Loop' followed by 'for [variable] in' [range], [iterable object]
 

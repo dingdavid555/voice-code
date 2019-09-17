@@ -68,6 +68,10 @@ def loop_func(curr_input, file, curr_file):
     file.write(output)
 
 def condition_func(curr_input, file, curr_file):
+    output = ""
+    for i in range(curr_input):
+        output += "\t"
+
     var1 = curr_input[0]
     oper = curr_input[1]
     var2 = curr_input[2]
@@ -83,7 +87,18 @@ def condition_func(curr_input, file, curr_file):
         var2 = curr_input[3]
         oper = ">"
 
-    print("if " + var1 + oper + var2 + ":" + "\n")
+    elif ((oper == "less") and (curr_input[2] == "equal")):
+        var2 = curr_input[3]
+        oper = "<="
+
+    elif ((oper == "greater") and (curr_input[2] == "equal")):
+        var2 = curr_input[3]
+        oper = ">="
+
+    output += "if " + var1 + " " + oper + " " + var2 + ":" + "\n"
+    file.write(output)
+    print(output)
+    curr_file.tabs += 1
 
     return 0
 
