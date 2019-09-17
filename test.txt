@@ -1,4 +1,1 @@
-for variable in range five:
-for variable in range six:
-		#this is a comment
-		#
+

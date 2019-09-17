@@ -62,22 +62,8 @@ def loop_func(curr_input, file, curr_file):
     for i in range(curr_input):
         output += "\t"
 
-
-    num = curr_input[1]
-    if (num == 'one'):
-        curr_input[1] = 1
-    elif (num == 'two'):
-        curr_input[1] = 2
-    elif (num == 'three'):
-        curr_input[1] = 3
-    elif (num == 'four'):
-        curr_input[1] = 4
-    elif (num == 'five'):
-        curr_input[1] = 5
-    elif (num == 'six'):
-        curr_input[1] = 6
-
-    output += 'for ' + curr_input[0] + ' in range ' + curr_input[1] + ':' + '\n'
+    num = int(curr_input[1])
+    output += 'for ' + curr_input[0] + ' in range ' + num + ':' + '\n'
 
     file.write(output)
 
@@ -111,7 +97,7 @@ def start_word(arr, file, curr_file):
         print("CURRENT WORD: %s " % arr[i])
         if (arr[i] == "print") or (arr[i] == "prince"):
             print_func(arr[i+1:], file, curr_file)
-        elif arr[i] == "create":
+        elif arr[i] == "let":
             create_func(arr[i+1:], file, curr_file)
         elif arr[i] == "loop":
             loop_func(arr[i+1:], file, curr_file)
